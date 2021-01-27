@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/splash/icon2.png" type="Texture" id=1]
+[ext_resource path="res://assets/splash/MyAvatars-happy-4.png" type="Texture" id=3]
+[ext_resource path="res://assets/splash/ggj-2021.png" type="Texture" id=4]
+[ext_resource path="res://scripts/splashscreen/splashscreen.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/SubHeadingButtonsFont.tres" type="DynamicFont" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Screen1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Screen2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.2, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Screen3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 2.2, 2.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen1" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="VBoxContainer" parent="Screen1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopLabel" type="Label" parent="Screen1/TextBox"]
+margin_right = 1060.0
+margin_bottom = 1168.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+text = "Made with"
+align = 1
+valign = 1
+
+[node name="BottomLabel" type="Label" parent="Screen1/TextBox"]
+margin_top = 1172.0
+margin_right = 1060.0
+margin_bottom = 2340.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+text = "Godot Game Engine"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 600
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopLabel" type="Label" parent="Screen2/VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 870.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+text = "GameDevone"
+align = 1
+valign = 1
+
+[node name="BottomLabel" type="Label" parent="Screen2/VBoxContainer"]
+margin_top = 1470.0
+margin_right = 1080.0
+margin_bottom = 2340.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen3" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade"
+anims/fade = SubResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,382 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/fonts/HeadingButtonsFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/buttons/home.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Montserrat/Montserrat-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scripts/aboutscreen/aboutitems.gd" type="Script" id=4]
+[ext_resource path="res://scripts/aboutscreen/aboutscroll.gd" type="Script" id=5]
+[ext_resource path="res://prefabs/Mouse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/aboutscreen/homebutton.gd" type="Script" id=7]
+[ext_resource path="res://assets/fonts/SubHeadingButtonsFont.tres" type="DynamicFont" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="About" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_right = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopLabel" type="Label" parent="VBoxContainer"]
+margin_right = 980.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "About"
+align = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 200.0
+margin_right = 980.0
+margin_bottom = 2036.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+bar_width = 80
+
+[node name="AboutItems" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 980.0
+margin_bottom = 1836.0
+size_flags_horizontal = 11
+size_flags_vertical = 3
+custom_constants/separation = 20
+script = ExtResource( 4 )
+
+[node name="HowToPlay" type="Button" parent="VBoxContainer/ScrollContainer/AboutItems"]
+margin_right = 980.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 0, 800 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = true
+text = "How to Play"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="VBoxContainer/ScrollContainer/AboutItems/HowToPlay"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.23792
+margin_right = 4.23792
+mouse_filter = 1
+color = Color( 0.372549, 0.0941176, 0.560784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlayText" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/AboutItems"]
+visible = false
+margin_top = 820.0
+margin_right = 1080.0
+margin_bottom = 7042.0
+rect_min_size = Vector2( 1080, 800 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mauris commodo quis imperdiet. Nulla pharetra diam sit amet nisl suscipit. Pharetra convallis posuere morbi leo urna molestie. Massa sed elementum tempus egestas sed sed risus. Lorem donec massa sapien faucibus et molestie ac feugiat. Ut lectus arcu bibendum at. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Enim tortor at auctor urna nunc id cursus metus aliquam.
+
+Sagittis nisl rhoncus mattis rhoncus urna neque. Lobortis mattis aliquam faucibus purus in. Massa eget egestas purus viverra accumsan in nisl. Tristique senectus et netus et malesuada. Dis parturient montes nascetur ridiculus mus. Consectetur libero id faucibus nisl tincidunt eget nullam. Auctor elit sed vulputate mi sit amet mauris. Maecenas ultricies mi eget mauris pharetra. Turpis egestas integer eget aliquet nibh praesent tristique. Aliquet eget sit amet tellus cras adipiscing enim eu. Ut venenatis tellus in metus vulputate eu scelerisque felis. Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim.
+
+A cras semper auctor neque vitae tempus quam pellentesque nec. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Magna ac placerat vestibulum lectus mauris ultrices eros in cursus. Orci dapibus ultrices in iaculis nunc sed augue lacus. Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Augue lacus viverra vitae congue eu consequat. At augue eget arcu dictum varius. Non quam lacus suspendisse faucibus interdum posuere. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Adipiscing vitae proin sagittis nisl. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Venenatis lectus magna fringilla urna porttitor. Sit amet risus nullam eget felis eget nunc lobortis mattis. Risus pretium quam vulputate dignissim suspendisse in est ante.
+
+Est ullamcorper eget nulla facilisi etiam dignissim diam. Sit amet nisl suscipit adipiscing bibendum est ultricies. Vitae nunc sed velit dignissim sodales ut eu sem. Libero enim sed faucibus turpis in. Mauris nunc congue nisi vitae. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Non pulvinar neque laoreet suspendisse. In nulla posuere sollicitudin aliquam ultrices. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. In aliquam sem fringilla ut morbi tincidunt. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum. Felis bibendum ut tristique et egestas quis. Pharetra vel turpis nunc eget lorem. Massa sed elementum tempus egestas sed. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Massa placerat duis ultricies lacus sed. Elementum sagittis vitae et leo. Nec sagittis aliquam malesuada bibendum.
+
+Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Et malesuada fames ac turpis. Diam maecenas sed enim ut sem viverra. In ante metus dictum at tempor commodo ullamcorper. Pellentesque habitant morbi tristique senectus et netus et. Egestas purus viverra accumsan in. Vel turpis nunc eget lorem dolor sed viverra ipsum. Morbi blandit cursus risus at ultrices mi. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. A iaculis at erat pellentesque adipiscing. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Iaculis nunc sed augue lacus. Sapien nec sagittis aliquam malesuada. Id interdum velit laoreet id donec ultrices tincidunt. Urna porttitor rhoncus dolor purus. Rutrum tellus pellentesque eu tincidunt tortor aliquam. Fermentum odio eu feugiat pretium nibh ipsum."
+fit_content_height = true
+
+[node name="Credits" type="Button" parent="VBoxContainer/ScrollContainer/AboutItems"]
+margin_top = 820.0
+margin_right = 980.0
+margin_bottom = 1620.0
+rect_min_size = Vector2( 0, 800 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = true
+text = "Credits"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="VBoxContainer/ScrollContainer/AboutItems/Credits"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.976471, 0.827451, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsText" type="GridContainer" parent="VBoxContainer/ScrollContainer/AboutItems"]
+visible = false
+margin_top = 1640.0
+margin_right = 1068.0
+margin_bottom = 2084.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Producer" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_right = 532.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Producer"
+valign = 1
+
+[node name="Name1" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_right = 1068.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="CreativeDirector" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 64.0
+margin_right = 532.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Creative Director"
+valign = 1
+
+[node name="Name2" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 64.0
+margin_right = 1068.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="DesignLead" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 128.0
+margin_right = 532.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Design Lead"
+valign = 1
+
+[node name="Name3" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 128.0
+margin_right = 1068.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="TechLead" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 192.0
+margin_right = 532.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Tech Lead"
+valign = 1
+
+[node name="Name4" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 192.0
+margin_right = 1068.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="ArtLead" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 256.0
+margin_right = 532.0
+margin_bottom = 316.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Art Lead"
+valign = 1
+
+[node name="Name5" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 256.0
+margin_right = 1068.0
+margin_bottom = 316.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="AudioLead" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 320.0
+margin_right = 532.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Audio Lead"
+valign = 1
+
+[node name="Name6" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 320.0
+margin_right = 1068.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="Developer" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 384.0
+margin_right = 532.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Developer"
+valign = 1
+
+[node name="Name7" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 384.0
+margin_right = 1068.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="Developer2" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 384.0
+margin_right = 532.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Developer"
+valign = 1
+
+[node name="Name8" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 384.0
+margin_right = 1068.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="Developer3" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 384.0
+margin_right = 532.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Developer"
+valign = 1
+
+[node name="Name9" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 384.0
+margin_right = 1068.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="Developer4" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_top = 384.0
+margin_right = 532.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Developer"
+valign = 1
+
+[node name="Name10" type="Label" parent="VBoxContainer/ScrollContainer/AboutItems/CreditsText"]
+margin_left = 536.0
+margin_top = 384.0
+margin_right = 1068.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Jane Doe"
+align = 2
+valign = 1
+
+[node name="Home" type="TextureButton" parent="VBoxContainer"]
+margin_top = 2040.0
+margin_right = 980.0
+margin_bottom = 2340.0
+rect_min_size = Vector2( 0, 300 )
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 7 )
+
+[node name="VFX" type="CanvasLayer" parent="."]
+
+[node name="Mouse" parent="VFX" instance=ExtResource( 6 )]
+[connection signal="toggled" from="VBoxContainer/ScrollContainer/AboutItems/HowToPlay" to="VBoxContainer/ScrollContainer/AboutItems" method="_on_HowToPlay_toggled"]
+[connection signal="toggled" from="VBoxContainer/ScrollContainer/AboutItems/Credits" to="VBoxContainer/ScrollContainer/AboutItems" method="_on_Credits_toggled"]
+[connection signal="pressed" from="VBoxContainer/Home" to="VBoxContainer/Home" method="_on_Home_pressed"]

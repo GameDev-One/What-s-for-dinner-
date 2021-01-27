@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefabs/VFX.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/DebugMode.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/sceneloader.gd" type="Script" id=4]
+
+[node name="Game" type="Node"]
+
+[node name="SceneLoader" type="CanvasLayer" parent="."]
+layer = 0
+script = ExtResource( 4 )
+current_scene = "res://prefabs/SplashScreen.tscn"
+
+[node name="DebugMode" parent="SceneLoader" instance=ExtResource( 3 )]
+
+[node name="VFX" parent="." instance=ExtResource( 2 )]
+layer = 2

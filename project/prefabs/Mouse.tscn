@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/mouse/trail.gd" type="Script" id=1]
+[ext_resource path="res://assets/mouse/target.png" type="Texture" id=2]
+[ext_resource path="res://scripts/mouse/mouse.gd" type="Script" id=3]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.990415, 0.981818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[node name="Mouse" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Trail" type="Line2D" parent="."]
+width = 50.0
+width_curve = SubResource( 2 )
+gradient = SubResource( 3 )
+script = ExtResource( 1 )
