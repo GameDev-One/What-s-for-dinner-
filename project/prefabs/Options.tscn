@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/HeadingButtonsFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/buttons/grey_boxTick.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scripts/aboutscreen/aboutscroll.gd" type="Script" id=5]
 [ext_resource path="res://assets/buttons/home.png" type="Texture" id=6]
 [ext_resource path="res://scripts/aboutscreen/homebutton.gd" type="Script" id=7]
+[ext_resource path="res://scripts/optionscreen/DebugModeButton.gd" type="Script" id=8]
+[ext_resource path="res://assets/placeholder/PH_BLACK.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -21,13 +23,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="."]
+[node name="PH_BG" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 9 )
+expand = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -175,6 +175,7 @@ texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 8 )
 
 [node name="Home" type="TextureButton" parent="VBoxContainer"]
 margin_top = 2040.0
@@ -185,4 +186,5 @@ texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 7 )
+[connection signal="toggled" from="VBoxContainer/ScrollContainer/GridContainer/DebugModeButton" to="VBoxContainer/ScrollContainer/GridContainer/DebugModeButton" method="_on_DebugModeButton_toggled"]
 [connection signal="pressed" from="VBoxContainer/Home" to="VBoxContainer/Home" method="_on_Home_pressed"]

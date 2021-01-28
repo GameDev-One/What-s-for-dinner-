@@ -8,3 +8,4 @@ func _ready():
 	get_h_scrollbar().rect_min_size.y = bar_width
 	get_h_scrollbar().rect_size.y = bar_width
 
+

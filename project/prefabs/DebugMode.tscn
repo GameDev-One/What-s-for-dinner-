@@ -35,6 +35,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchor_right = 1.0
 margin_left = 60.0
 margin_top = 60.0

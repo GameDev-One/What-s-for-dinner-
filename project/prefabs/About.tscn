@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/fonts/HeadingButtonsFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/buttons/home.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://prefabs/Mouse.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/aboutscreen/homebutton.gd" type="Script" id=7]
 [ext_resource path="res://assets/fonts/SubHeadingButtonsFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/placeholder/PH_BLACK.png" type="Texture" id=9]
+[ext_resource path="res://assets/placeholder/PH_PUPRLE.png" type="Texture" id=10]
+[ext_resource path="res://assets/placeholder/PH_ORANGE.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -24,13 +27,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="."]
+[node name="PH_BG" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 9 )
+expand = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -81,17 +82,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="VBoxContainer/ScrollContainer/AboutItems/HowToPlay"]
+[node name="PH_BG" type="TextureRect" parent="VBoxContainer/ScrollContainer/AboutItems/HowToPlay"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.23792
-margin_right = 4.23792
-mouse_filter = 1
-color = Color( 0.372549, 0.0941176, 0.560784, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 10 )
+expand = true
 
 [node name="HowToPlayText" type="RichTextLabel" parent="VBoxContainer/ScrollContainer/AboutItems"]
 visible = false
@@ -127,15 +123,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="VBoxContainer/ScrollContainer/AboutItems/Credits"]
+[node name="PH_BG" type="TextureRect" parent="VBoxContainer/ScrollContainer/AboutItems/Credits"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
-color = Color( 0.976471, 0.827451, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 11 )
+expand = true
 
 [node name="CreditsText" type="GridContainer" parent="VBoxContainer/ScrollContainer/AboutItems"]
 visible = false

@@ -11,6 +11,9 @@ var stats = []
 func add_stat(stat_name, object, stat_ref, is_method):
 	stats.append([stat_name, object, stat_ref, is_method])
 
+func _ready():
+	var err = Global.connect("on_debug_mode_toggled", self, "_on_TextureButton_toggled")
+	assert(err == OK, "Failed to connect to 'on_debug_mode_toggled'")
 
 func _process(delta):
 	var label_text = ""
@@ -45,9 +48,10 @@ func _process(delta):
 	if DebugText:
 		DebugText.text = label_text
 
-func _on_TextureButton_toggled(button_pressed):
+
+func _on_TextureButton_toggled(button_pressed: bool) -> void:
 	if button_pressed:
-		layer = DISABLED
-	if not button_pressed:
 		layer = ENABLED
+	if not button_pressed:
+		layer = DISABLED
 		

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/Montserrat/Montserrat-Medium.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/splash/MyAvatars-happy-4.png" type="Texture" id=2]
+[ext_resource path="res://assets/placeholder/PH_BLACK.png" type="Texture" id=2]
+[ext_resource path="res://assets/placeholder/PH_GREEN.png" type="Texture" id=3]
 [ext_resource path="res://assets/buttons/checkmark.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/SubHeadingButtonsFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/placeholder/PH_ORANGE.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/cross.png" type="Texture" id=7]
 [ext_resource path="res://assets/buttons/gear.png" type="Texture" id=8]
 [ext_resource path="res://assets/buttons/question.png" type="Texture" id=9]
@@ -23,13 +25,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="."]
+[node name="PH_BG" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 2 )
+expand = true
 
 [node name="MainVBox" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -42,12 +42,12 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="MainVBox"]
-margin_right = 1080.0
+margin_right = 1090.0
 margin_bottom = 777.0
 rect_min_size = Vector2( 1080, 300 )
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
-text = "Placeholder Title"
+text = "PH_TITLE"
 align = 1
 valign = 1
 autowrap = true
@@ -55,12 +55,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="TextureRect" parent="MainVBox"]
+[node name="PH_LOGO" type="TextureRect" parent="MainVBox"]
 margin_top = 781.0
-margin_right = 1080.0
+margin_right = 1090.0
 margin_bottom = 1558.0
 size_flags_vertical = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -69,7 +69,7 @@ __meta__ = {
 
 [node name="Buttons" type="GridContainer" parent="MainVBox"]
 margin_top = 1562.0
-margin_right = 1080.0
+margin_right = 1090.0
 margin_bottom = 2340.0
 size_flags_vertical = 3
 custom_constants/vseparation = 10
@@ -79,7 +79,7 @@ script = ExtResource( 10 )
 
 [node name="Quit" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 1, 0.0980392, 0.0980392, 1 )
-margin_right = 535.0
+margin_right = 540.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -89,8 +89,8 @@ stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 0, 0.588235, 1, 1 )
-margin_left = 545.0
-margin_right = 1080.0
+margin_left = 550.0
+margin_right = 1090.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -101,7 +101,7 @@ stretch_mode = 5
 [node name="About" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 1, 1, 0, 1 )
 margin_top = 389.0
-margin_right = 535.0
+margin_right = 540.0
 margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -111,9 +111,9 @@ stretch_mode = 5
 
 [node name="Play" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 0.0980392, 0.666667, 0, 1 )
-margin_left = 545.0
+margin_left = 550.0
 margin_top = 389.0
-margin_right = 1080.0
+margin_right = 1090.0
 margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -122,16 +122,18 @@ expand = true
 stretch_mode = 5
 
 [node name="ConfirmationDialog" type="Popup" parent="MainVBox/Buttons"]
+margin_top = 524.0
 margin_right = 1080.0
-margin_bottom = 758.0
+margin_bottom = 776.0
 rect_min_size = Vector2( 1080, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Bg" type="ColorRect" parent="MainVBox/Buttons/ConfirmationDialog"]
+[node name="PH_BG" type="TextureRect" parent="MainVBox/Buttons/ConfirmationDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0.521569, 0.0980392, 1 )
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -145,7 +147,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MainVBox/Buttons/ConfirmationDialog/VBoxContainer"]
 margin_right = 1080.0
-margin_bottom = 377.0
+margin_bottom = 124.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 text = "Are you sure?"
@@ -156,9 +158,9 @@ __meta__ = {
 }
 
 [node name="Choices" type="HBoxContainer" parent="MainVBox/Buttons/ConfirmationDialog/VBoxContainer"]
-margin_top = 381.0
+margin_top = 128.0
 margin_right = 1080.0
-margin_bottom = 758.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -168,7 +170,7 @@ __meta__ = {
 [node name="Yes" type="TextureButton" parent="MainVBox/Buttons/ConfirmationDialog/VBoxContainer/Choices"]
 modulate = Color( 0.0980392, 0.666667, 0, 1 )
 margin_right = 538.0
-margin_bottom = 377.0
+margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
@@ -179,7 +181,7 @@ stretch_mode = 5
 modulate = Color( 1, 0.0980392, 0.0980392, 1 )
 margin_left = 542.0
 margin_right = 1080.0
-margin_bottom = 377.0
+margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 7 )
