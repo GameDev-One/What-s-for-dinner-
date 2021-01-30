@@ -32,3 +32,7 @@ func _on_About_pressed():
 
 func _on_Options_pressed():
 	Global.emit_signal("on_change_scene_requested", "res://prefabs/Options.tscn")
+
+
+func _on_Play_pressed():
+	Global.emit_signal("on_change_scene_requested", "res://prefabs/Minigames/WhackAMole/WhackAMole.tscn")

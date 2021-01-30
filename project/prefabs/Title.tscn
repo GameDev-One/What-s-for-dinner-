@@ -42,7 +42,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="MainVBox"]
-margin_right = 1090.0
+margin_right = 1080.0
 margin_bottom = 777.0
 rect_min_size = Vector2( 1080, 300 )
 size_flags_vertical = 3
@@ -57,7 +57,7 @@ __meta__ = {
 
 [node name="PH_LOGO" type="TextureRect" parent="MainVBox"]
 margin_top = 781.0
-margin_right = 1090.0
+margin_right = 1080.0
 margin_bottom = 1558.0
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -69,7 +69,7 @@ __meta__ = {
 
 [node name="Buttons" type="GridContainer" parent="MainVBox"]
 margin_top = 1562.0
-margin_right = 1090.0
+margin_right = 1080.0
 margin_bottom = 2340.0
 size_flags_vertical = 3
 custom_constants/vseparation = 10
@@ -79,7 +79,7 @@ script = ExtResource( 10 )
 
 [node name="Quit" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 1, 0.0980392, 0.0980392, 1 )
-margin_right = 540.0
+margin_right = 535.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -89,8 +89,8 @@ stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 0, 0.588235, 1, 1 )
-margin_left = 550.0
-margin_right = 1090.0
+margin_left = 545.0
+margin_right = 1080.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -101,7 +101,7 @@ stretch_mode = 5
 [node name="About" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 1, 1, 0, 1 )
 margin_top = 389.0
-margin_right = 540.0
+margin_right = 535.0
 margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -111,9 +111,9 @@ stretch_mode = 5
 
 [node name="Play" type="TextureButton" parent="MainVBox/Buttons"]
 modulate = Color( 0.0980392, 0.666667, 0, 1 )
-margin_left = 550.0
+margin_left = 545.0
 margin_top = 389.0
-margin_right = 1090.0
+margin_right = 1080.0
 margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -193,6 +193,7 @@ __meta__ = {
 [connection signal="pressed" from="MainVBox/Buttons/Quit" to="MainVBox/Buttons" method="_on_Quit_pressed"]
 [connection signal="pressed" from="MainVBox/Buttons/Options" to="MainVBox/Buttons" method="_on_Options_pressed"]
 [connection signal="pressed" from="MainVBox/Buttons/About" to="MainVBox/Buttons" method="_on_About_pressed"]
+[connection signal="pressed" from="MainVBox/Buttons/Play" to="MainVBox/Buttons" method="_on_Play_pressed"]
 [connection signal="popup_hide" from="MainVBox/Buttons/ConfirmationDialog" to="MainVBox/Buttons" method="_on_ConfirmationDialog_popup_hide"]
 [connection signal="pressed" from="MainVBox/Buttons/ConfirmationDialog/VBoxContainer/Choices/Yes" to="MainVBox/Buttons" method="_on_Yes_pressed"]
 [connection signal="pressed" from="MainVBox/Buttons/ConfirmationDialog/VBoxContainer/Choices/No" to="MainVBox/Buttons" method="_on_No_pressed"]

@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/placeholder/PH_BLACK.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/Minigames/WhackAMole/Mole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/Minigames/WhackAMole/Timer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/whackamole/whackamole.gd" type="Script" id=4]
+
+[node name="WhackAMole" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moles" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -470.0
+margin_top = -470.0
+margin_right = 470.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 940, 1440 )
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mole" parent="Moles" instance=ExtResource( 2 )]
+margin_right = 232.0
+margin_bottom = 357.0
+
+[node name="Mole2" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 236.0
+margin_right = 468.0
+margin_bottom = 357.0
+
+[node name="Mole3" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 472.0
+margin_right = 704.0
+margin_bottom = 357.0
+
+[node name="Mole4" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 708.0
+margin_right = 940.0
+margin_bottom = 357.0
+
+[node name="Mole5" parent="Moles" instance=ExtResource( 2 )]
+margin_top = 361.0
+margin_right = 232.0
+margin_bottom = 718.0
+
+[node name="Mole6" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 236.0
+margin_top = 361.0
+margin_right = 468.0
+margin_bottom = 718.0
+
+[node name="Mole7" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 472.0
+margin_top = 361.0
+margin_right = 704.0
+margin_bottom = 718.0
+
+[node name="Mole8" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 708.0
+margin_top = 361.0
+margin_right = 940.0
+margin_bottom = 718.0
+
+[node name="Mole9" parent="Moles" instance=ExtResource( 2 )]
+margin_top = 722.0
+margin_right = 232.0
+margin_bottom = 1079.0
+
+[node name="Mole10" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 236.0
+margin_top = 722.0
+margin_right = 468.0
+margin_bottom = 1079.0
+
+[node name="Mole11" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 472.0
+margin_top = 722.0
+margin_right = 704.0
+margin_bottom = 1079.0
+
+[node name="Mole12" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 708.0
+margin_top = 722.0
+margin_right = 940.0
+margin_bottom = 1079.0
+
+[node name="Mole13" parent="Moles" instance=ExtResource( 2 )]
+margin_top = 1083.0
+margin_right = 232.0
+margin_bottom = 1440.0
+
+[node name="Mole14" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 236.0
+margin_top = 1083.0
+margin_right = 468.0
+margin_bottom = 1440.0
+
+[node name="Mole15" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 472.0
+margin_top = 1083.0
+margin_right = 704.0
+margin_bottom = 1440.0
+
+[node name="Mole16" parent="Moles" instance=ExtResource( 2 )]
+margin_left = 708.0
+margin_top = 1083.0
+margin_right = 940.0
+margin_bottom = 1440.0
+
+[node name="Timer" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_right = 200.0
